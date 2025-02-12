@@ -1,0 +1,11 @@
+# Unity auto-generated folders
+Library/
+Temp/
+Obj/
+Logs/
+MemoryCaptures/
+
+# Build artifacts
+Builds/
+Build/
+bin/
