@@ -9,3 +9,6 @@ MemoryCaptures/
 Builds/
 Build/
 bin/
+
+# Ignore Visual Studio files
+.vs/
