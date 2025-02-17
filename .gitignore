@@ -1,11 +1,63 @@
-# Unity auto-generated folders
+# Ignore user-specific files and settings
+.vs/
+.idea/
+*.suo
+*.user
+*.userprefs
+*.csproj
+*.pidb
+*.booproj
+*.svd
+*.orig
+*.swp
+*.sln
+
+# Ignore Unity-generated files
 Library/
+Logs/
 Temp/
 Obj/
-Logs/
 MemoryCaptures/
+Assets/StreamingAssets/UnityPlayer.log
 
-# Build artifacts
-Builds/
+# Ignore Build and Cache files
 Build/
-bin/
+Builds/
+ExportedObj/
+*.apk
+*.unitypackage
+*.app
+*.ipa
+*.aab
+
+# Ignore Auto-generated folders and files
+*.pidb
+*.pdb
+*.ilk
+*.lmp
+*.suo
+*.svd
+*.ntvs*
+*.njsproj
+*.sln.docstates
+.DS_Store
+Thumbs.db
+
+# Ignore Unity settings and lock files
+UserSettings/
+ProjectSettings/ProjectVersion.txt
+ProjectSettings/EditorBuildSettings.asset
+
+# Ignore logs and crash reports
+Logs/
+*.log
+*.stacktrace
+
+# Ignore Unity metadata files
+*.meta~  
+*.asset~
+
+# Ignore local caches and temporary files
+Library/
+Temp/
+Packages/
