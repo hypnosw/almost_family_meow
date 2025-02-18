@@ -18,7 +18,7 @@ public class FoodMechanics : MonoBehaviour
     void OnTriggerEnter(Collider other){
         if(other.CompareTag("Player")){
             Debug.Log("Hunger Restored: " + foodValue);
-            Destroy(gameObject, 1);
+            Destroy(gameObject, 0.1f);
         }
     }
 }

@@ -5,8 +5,8 @@ public class MouseLook : MonoBehaviour
     public float mouseSensitivity = 100f;
     Transform playerBody;
     private float pitch;
-    public float pitchMin = -90f;
-    public float pitchMax = 90f;
+    public float pitchMin = -20f;
+    public float pitchMax = 20f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
