@@ -15,6 +15,12 @@ public class FPSPlayerController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+
+        Collider[] colliders = GetComponentsInChildren<Collider>();
+        foreach (Collider col in colliders)
+        {
+            Debug.Log("Found Collider on: " + col.gameObject.name);
+        }
     }
 
     // Update is called once per frame
@@ -37,7 +43,7 @@ public class FPSPlayerController : MonoBehaviour
             }
             else
             {
-                moveDirection.y = 0.0f;
+                moveDirection.y = -0.1f;
             }
         }
         else
@@ -46,6 +52,7 @@ public class FPSPlayerController : MonoBehaviour
             moveDirection = Vector3.Lerp(moveDirection, input, airControl * Time.deltaTime);
         }
         moveDirection.y -= gravity * Time.deltaTime;
-        controller.Move(moveDirection * speed * Time.deltaTime);
+        Vector3 finalMove = new Vector3(moveDirection.x * speed, moveDirection.y, moveDirection.z * speed);
+        controller.Move(finalMove * Time.deltaTime);
     }
 }
