@@ -3,8 +3,9 @@ using UnityEngine;
 public class FPSPlayerController : MonoBehaviour
 {
 
-    public float speed = 10f;
-    public float jumpHeight = 0.4f;
+    public float speed = 5f;
+    private float baseSpeed = 5f;
+    public float jumpHeight = 0.1f;
 
     public float gravity = 9.81f;
     private Vector3 input;
@@ -15,11 +16,17 @@ public class FPSPlayerController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        baseSpeed = speed;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)){
+            speed = baseSpeed * 2;
+        } else {
+            speed = baseSpeed;
+        }
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
