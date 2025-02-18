@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8998411143438418573}
+  - component: {fileID: 2395925586796143775}
+  - component: {fileID: 2076726139555657901}
   m_Layer: 0
   m_Name: Food 50%
   m_TagString: Food
@@ -34,6 +36,40 @@ Transform:
   - {fileID: 1376357176664856277}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2395925586796143775
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018517745497463668}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.43112695, z: 1.2880098}
+  m_Center: {x: 0, y: 0.22665855, z: -0.32121032}
+--- !u!114 &2076726139555657901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018517745497463668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f72676b39dfc72e41859685dd3563828, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodValue: 50
 --- !u!1001 &1349637183913113277
 PrefabInstance:
   m_ObjectHideFlags: 0
