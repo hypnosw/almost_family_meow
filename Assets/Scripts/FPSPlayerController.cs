@@ -3,7 +3,7 @@ using UnityEngine;
 public class FPSPlayerController : MonoBehaviour
 {
 
-    public float speed = 10f;
+    public float speed = 5f;
     public float jumpHeight = 0.4f;
 
     public float gravity = 9.81f;
