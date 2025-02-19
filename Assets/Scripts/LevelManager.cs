@@ -22,12 +22,14 @@ public class LevelManager : MonoBehaviour
 
     public void LevelWon()
     {
+        PlayerStatus.isAlive = false;
         DisplayLevelMessage("LEVEL COMPLETE!");
         nextButton.SetActive(true);
     }
 
     public void LevelLost()
     {
+        PlayerStatus.isAlive = false;
         DisplayLevelMessage("YOU LOST!");
         Invoke("ReloadSameScene", 2f);
     }
