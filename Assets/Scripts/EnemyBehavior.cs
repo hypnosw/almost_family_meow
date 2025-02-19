@@ -7,13 +7,17 @@ public class EnemyBehavior : MonoBehaviour
     public float speed = 5f;
     public float maxDistance = 15f;
     PlayerStatus playerStatus;
-    FPSPlayerController playerController;
+    private AudioSource audioSource;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         playerStatus = player.GetComponent<PlayerStatus>();
-        playerController = player.GetComponent<FPSPlayerController>();
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
     }
 
     // Update is called once per frame
@@ -33,7 +37,7 @@ public class EnemyBehavior : MonoBehaviour
         }
         float step = speed * Time.deltaTime;
         transform.LookAt(player);
-        if (playerController.isInvisible == false)
+        if (FPSPlayerController.isInvisible == false)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.position, step);
         }
