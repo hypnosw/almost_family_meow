@@ -12,6 +12,7 @@ public class FPSPlayerController : MonoBehaviour
     Vector3 moveDirection;
     CharacterController controller;
     public float airControl = 2;
+    public bool isRunning { get; private set; }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,8 +24,10 @@ public class FPSPlayerController : MonoBehaviour
     void Update()
     {
         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)){
+            isRunning = true;
             speed = baseSpeed * 2;
         } else {
+            isRunning = false;
             speed = baseSpeed;
         }
         float moveHorizontal = Input.GetAxis("Horizontal");
