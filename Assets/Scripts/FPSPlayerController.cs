@@ -17,6 +17,7 @@ public class FPSPlayerController : MonoBehaviour
     CharacterController controller;
     public float airControl = 2;
     public bool isRunning { get; private set; }
+    public bool isInvisible { get; private set; }
     private bool isSpeedBoosted = false;
     PlayerStatus playerStatus;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -105,6 +106,7 @@ public class FPSPlayerController : MonoBehaviour
             playerMaterial.SetFloat("_SurfaceType", 1);
             playerMaterial.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Transparent;
 
+            isInvisible = true;
             potionIcon.enabled = false;
             Debug.Log("Player Surface Type: Transparent");
 
@@ -112,6 +114,7 @@ public class FPSPlayerController : MonoBehaviour
 
             playerMaterial.SetFloat("_SurfaceType", 0);
             playerMaterial.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Geometry;
+            isInvisible = false;
 
             Debug.Log("Player Surface Type: Opaque");
         }

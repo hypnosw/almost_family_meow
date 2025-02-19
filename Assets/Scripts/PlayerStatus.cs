@@ -13,7 +13,7 @@ public class PlayerStatus : MonoBehaviour
     public float energyIncreaseRate = 0.5f;
     public static bool isAlive{get; private set;}
     private float currentHunger;
-    
+
     [HideInInspector]
     public float currentEnergy;
     private FPSPlayerController playerController;
@@ -49,7 +49,7 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die()
     {
         isAlive = false;
         transform.Rotate(0, 0, 90, Space.Self);
