@@ -8,6 +8,10 @@ TagManager:
   - Gem
   - RollerSkates
   - Potion
+  - lb_bird
+  - lb_groundTarget
+  - lb_perchTarget
+  - Crow
   layers:
   - Default
   - TransparentFX

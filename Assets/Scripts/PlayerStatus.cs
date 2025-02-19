@@ -11,7 +11,7 @@ public class PlayerStatus : MonoBehaviour
     public int startingEnergy = 30;
     public float energyDecreaseRate = 1;
     public float energyIncreaseRate = 0.5f;
-    public static bool isAlive{get; private set;}
+    public static bool isAlive{get; set;}
     private float currentHunger;
 
     [HideInInspector]
