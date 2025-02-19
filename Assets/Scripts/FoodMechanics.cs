@@ -15,10 +15,18 @@ public class FoodMechanics : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider other){
-        if(other.CompareTag("Player")){
-            Debug.Log("Hunger Restored: " + foodValue);
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            PlayerStatus playerStatus = other.GetComponent<PlayerStatus>();
+            if (playerStatus != null)
+            {
+                playerStatus.IncreaseHunger(foodValue);
+                Debug.Log("Hunger Restored: " + foodValue);
+            }
             Destroy(gameObject, 0.1f);
         }
     }
+    
 }
