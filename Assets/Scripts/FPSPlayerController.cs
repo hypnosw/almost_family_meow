@@ -16,8 +16,8 @@ public class FPSPlayerController : MonoBehaviour
     Vector3 moveDirection;
     CharacterController controller;
     public float airControl = 2;
-    public bool isRunning { get; private set; }
-    public bool isInvisible { get; private set; }
+    public static bool isRunning { get; private set; }
+    public static bool isInvisible { get; private set; }
     private bool isSpeedBoosted = false;
     PlayerStatus playerStatus;
     // Start is called once before the first execution of Update after the MonoBehaviour is created

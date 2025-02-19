@@ -17,6 +17,7 @@ public class PlayerStatus : MonoBehaviour
     [HideInInspector]
     public float currentEnergy;
     private FPSPlayerController playerController;
+    LevelManager levelManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,6 +27,7 @@ public class PlayerStatus : MonoBehaviour
         currentEnergy = startingEnergy;
         UpdateEnergySlider();
         playerController = GetComponent<FPSPlayerController>();
+        levelManager = FindAnyObjectByType<LevelManager>();
     }
 
     // Update is called once per frame
@@ -34,7 +36,7 @@ public class PlayerStatus : MonoBehaviour
         if(isAlive){
             DecreaseHunger();
 
-            if (playerController != null && playerController.isRunning)
+            if (playerController != null && FPSPlayerController.isRunning)
             {
                 DecreaseEnergy();
             }
@@ -53,6 +55,7 @@ public class PlayerStatus : MonoBehaviour
     {
         isAlive = false;
         transform.Rotate(0, 0, 90, Space.Self);
+        levelManager.LevelLost();
         Debug.Log("You died!");
     }
 
