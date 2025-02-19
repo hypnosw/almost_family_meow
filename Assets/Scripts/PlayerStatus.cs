@@ -13,7 +13,9 @@ public class PlayerStatus : MonoBehaviour
     public float energyIncreaseRate = 0.5f;
     public static bool isAlive{get; private set;}
     private float currentHunger;
-    private float currentEnergy;
+    
+    [HideInInspector]
+    public float currentEnergy;
     private FPSPlayerController playerController;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

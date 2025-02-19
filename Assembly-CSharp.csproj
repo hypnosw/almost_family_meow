@@ -68,11 +68,17 @@
     <Compile Include="Assets\Scripts\EnemyBehavior.cs" />
     <Compile Include="Assets\LowPoly3DAnimatedNutBrothers_RollerSkatesPackage\DemoScenes\Script\Demo.cs" />
     <Compile Include="Assets\Scripts\MouseLook.cs" />
+    <Compile Include="Assets\living birds\demo\livingBirdsDemoScript.cs" />
+    <Compile Include="Assets\living birds\scripts\lb_Bird.cs" />
     <Compile Include="Assets\Scripts\FPSPlayerController.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\GemMechanics.cs" />
     <Compile Include="Assets\Scripts\FoodMechanics.cs" />
+    <Compile Include="Assets\living birds\scripts\lb_CrowProximity.cs" />
+    <Compile Include="Assets\living birds\scripts\lb_BirdController.cs" />
+    <Compile Include="Assets\Scripts\CrowBehavior.cs" />
     <Compile Include="Assets\Scripts\PlayerStatus.cs" />
+    <Compile Include="Assets\Scripts\PowerUps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
