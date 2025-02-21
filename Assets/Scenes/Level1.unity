@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: dfd5fe4561034804291bb92fffe808d9, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1600,7 +1600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 2165255189384667944, guid: 205fbd25619c30f40b30c732c0205260, type: 3}
   spawnDistance: 5
-  spawnInterval: 120
+  spawnInterval: 60
 --- !u!1001 &283907222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2807,7 +2807,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 100000
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -17681,18 +17681,6 @@ PrefabInstance:
       value: Food 80%
       objectReference: {fileID: 0}
     - target: {fileID: 9211133805563434772, guid: e5e9a3436a2ee2e4b98c63703ce61759, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9211133805563434772, guid: e5e9a3436a2ee2e4b98c63703ce61759, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9211133805563434772, guid: e5e9a3436a2ee2e4b98c63703ce61759, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9211133805563434772, guid: e5e9a3436a2ee2e4b98c63703ce61759, type: 3}
       propertyPath: m_LocalPosition.x
       value: 63.007
       objectReference: {fileID: 0}
@@ -17731,10 +17719,6 @@ PrefabInstance:
     - target: {fileID: 9211133805563434772, guid: e5e9a3436a2ee2e4b98c63703ce61759, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9211133805563434772, guid: e5e9a3436a2ee2e4b98c63703ce61759, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17901,7 +17885,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8269059436202811154, guid: 205fbd25619c30f40b30c732c0205260, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 8269059436202811154, guid: 205fbd25619c30f40b30c732c0205260, type: 3}
       propertyPath: m_LocalRotation.x
@@ -17909,7 +17893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8269059436202811154, guid: 205fbd25619c30f40b30c732c0205260, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 8269059436202811154, guid: 205fbd25619c30f40b30c732c0205260, type: 3}
       propertyPath: m_LocalRotation.z
@@ -17921,7 +17905,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8269059436202811154, guid: 205fbd25619c30f40b30c732c0205260, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 8269059436202811154, guid: 205fbd25619c30f40b30c732c0205260, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

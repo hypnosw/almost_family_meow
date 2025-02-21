@@ -67,7 +67,6 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\EnemyBehavior.cs" />
     <Compile Include="Assets\LowPoly3DAnimatedNutBrothers_RollerSkatesPackage\DemoScenes\Script\Demo.cs" />
-    <Compile Include="Assets\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\MouseLook.cs" />
     <Compile Include="Assets\living birds\demo\livingBirdsDemoScript.cs" />
     <Compile Include="Assets\living birds\scripts\lb_Bird.cs" />
@@ -77,6 +76,7 @@
     <Compile Include="Assets\Scripts\FoodMechanics.cs" />
     <Compile Include="Assets\living birds\scripts\lb_CrowProximity.cs" />
     <Compile Include="Assets\living birds\scripts\lb_BirdController.cs" />
+    <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\CrowBehavior.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\PlayerStatus.cs" />
@@ -1224,6 +1224,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.EditorCoroutines.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1234,6 +1238,10 @@
     </Reference>
     <Reference Include="Unity.AI.Navigation.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Play.Publisher.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Play.Publisher.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime">
@@ -1290,6 +1298,10 @@
     </Reference>
     <Reference Include="Unity.InputSystem">
       <HintPath>Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEditorBridgeDev.001">
+      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridgeDev.001.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.2D.Runtime">
