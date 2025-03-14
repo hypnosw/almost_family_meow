@@ -103,8 +103,13 @@ public class FPSPlayerController : MonoBehaviour
         {
             Material playerMaterial = renderer.material;
 
-            playerMaterial.SetFloat("_SurfaceType", 1);
+            playerMaterial.SetFloat("_Surface", 1);
             playerMaterial.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Transparent;
+            playerMaterial.EnableKeyword("_SURFACE_TYPE_TRANSPARENT");
+
+            Color color = playerMaterial.color;
+            color.a = 0f;
+            playerMaterial.color = color;
 
             isInvisible = true;
             potionIcon.enabled = false;
@@ -112,8 +117,12 @@ public class FPSPlayerController : MonoBehaviour
 
             yield return new WaitForSeconds(5);
 
-            playerMaterial.SetFloat("_SurfaceType", 0);
+            playerMaterial.SetFloat("_Surface", 0);
             playerMaterial.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Geometry;
+            playerMaterial.DisableKeyword("_SURFACE_TYPE_TRANSPARENT");
+
+            color.a = 1f;
+            playerMaterial.color = color;
             isInvisible = false;
 
             Debug.Log("Player Surface Type: Opaque");

@@ -6,6 +6,7 @@ public class CrowBehavior : MonoBehaviour
 {
     public TMP_Text crowText;
     public float messageDuration = 5f;
+    public AudioClip crowSound;
     LevelManager levelManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,6 +31,10 @@ public class CrowBehavior : MonoBehaviour
             } else {
                 Debug.Log("Showing message for " + messageDuration + " seconds.");
                 crowText.enabled = true;
+                if(crowSound != null)
+                {
+                    AudioSource.PlayClipAtPoint(crowSound, transform.position);
+                }
                 Invoke("HideText", messageDuration);
             }
         }

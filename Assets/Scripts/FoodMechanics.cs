@@ -3,6 +3,7 @@ using UnityEngine;
 public class FoodMechanics : MonoBehaviour
 {
     public int foodValue;
+    public AudioClip foodSound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,6 +25,10 @@ public class FoodMechanics : MonoBehaviour
             {
                 playerStatus.IncreaseHunger(foodValue);
                 Debug.Log("Hunger Restored: " + foodValue);
+            }
+            if(foodSound != null)
+            {
+                AudioSource.PlayClipAtPoint(foodSound, transform.position);
             }
             Destroy(gameObject, 0.1f);
         }

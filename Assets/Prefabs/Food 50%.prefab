@@ -70,6 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodValue: 50
+  foodSound: {fileID: 8300000, guid: 8f094aae12f77ac40b12ec5fe3f73a27, type: 3}
 --- !u!1001 &946121564504499905
 PrefabInstance:
   m_ObjectHideFlags: 0

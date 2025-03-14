@@ -5,6 +5,7 @@ public class PowerUps : MonoBehaviour
 {
     public float speed = 80f;
     public Image icon;
+    public AudioClip powerUpSound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,13 +15,17 @@ public class PowerUps : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(Vector3.up * speed * Time.deltaTime);
+        // transform.Rotate(Vector3.up * speed * Time.deltaTime);
     }
 
     void OnTriggerEnter(Collider other){
         if(other.CompareTag("Player")){
             Debug.Log("Power Up Collected");
             icon.enabled = true;
+            if(powerUpSound != null)
+            {
+                AudioSource.PlayClipAtPoint(powerUpSound, transform.position);
+            }
             Destroy(gameObject, 0.1f);
         }
     }

@@ -3712,6 +3712,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9da0c6d9028e09d4aa7c859288affd33, type: 3}
+--- !u!1 &434654728 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3023834504392766987, guid: 8403e43d8dba6624b9a8756eb715f044, type: 3}
+  m_PrefabInstance: {fileID: 4493263746271703423}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &445822508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10256,6 +10261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 80
   icon: {fileID: 487252855}
+  powerUpSound: {fileID: 8300000, guid: 02f98902d77f7431cb0c64b9fe4744fc, type: 3}
 --- !u!65 &699042915
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12031,6 +12037,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 0646ceebc81f52a4e8a676e94ab46092, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a24ec9cf4c2103646a47e0497a925d6b, type: 2}
     - target: {fileID: 13700000, guid: 0646ceebc81f52a4e8a676e94ab46092, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -15339,6 +15349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 80
   icon: {fileID: 886504053}
+  powerUpSound: {fileID: 8300000, guid: 76231034c16a346359288718672bbc0a, type: 3}
 --- !u!136 &1368931492
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17740,6 +17751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crowText: {fileID: 33877125}
   messageDuration: 5
+  crowSound: {fileID: 8300000, guid: e2622b95524aab94b9a0448a1a4c6fc8, type: 3}
 --- !u!65 &1646635200
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18455,6 +18467,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2503159001275313329, guid: 8403e43d8dba6624b9a8756eb715f044, type: 3}
   m_PrefabInstance: {fileID: 4493263746271703423}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1729697976
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434654728}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 616501ea39cd29741aaf71320adb640b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1739741523
 GameObject:
   m_ObjectHideFlags: 0
@@ -19024,6 +19058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 100
   gemChecked: {fileID: 1067637496}
+  gemSound: {fileID: 8300000, guid: 6fede028ba58b48d08e05b2bff883359, type: 3}
 --- !u!65 &1833033274
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22071,15 +22106,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2503159001275313329, guid: 8403e43d8dba6624b9a8756eb715f044, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2503159001275313329, guid: 8403e43d8dba6624b9a8756eb715f044, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2503159001275313329, guid: 8403e43d8dba6624b9a8756eb715f044, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2503159001275313329, guid: 8403e43d8dba6624b9a8756eb715f044, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -22104,7 +22139,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3023834504392766987, guid: 8403e43d8dba6624b9a8756eb715f044, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1729697976}
   m_SourcePrefab: {fileID: 100100000, guid: 8403e43d8dba6624b9a8756eb715f044, type: 3}
 --- !u!1001 &5637072190669010715
 PrefabInstance:

@@ -5,6 +5,7 @@ public class GemMechanics : MonoBehaviour
 {
     public int rotationSpeed = 100;
     public Image gemChecked;
+    public AudioClip gemSound;
     public static bool gemCollected { get; private set; }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,6 +25,10 @@ public class GemMechanics : MonoBehaviour
             Debug.Log("Gem Collected");
             gemChecked.enabled = true;
             gemCollected = true;
+            if(gemSound != null)
+            {
+                AudioSource.PlayClipAtPoint(gemSound, transform.position);
+            }
             Destroy(gameObject, 0.1f);
         }
     }
