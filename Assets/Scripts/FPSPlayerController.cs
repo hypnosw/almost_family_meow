@@ -10,22 +10,32 @@ public class FPSPlayerController : MonoBehaviour
     public float jumpHeight = 0.1f;
 
     public float gravity = 9.81f;
+    public float airControl = 2;
+    public float rotationSpeed = 5f;
     public Image rollerSkatesIcon;
     public Image potionIcon;
+    public Material invisibleMat;
+    Transform cameraTransform;
     private Vector3 input;
     Vector3 moveDirection;
     CharacterController controller;
-    public float airControl = 2;
     public static bool isRunning { get; private set; }
     public static bool isInvisible { get; private set; }
     private bool isSpeedBoosted = false;
     PlayerStatus playerStatus;
+    Material catMat;
+
+    Animator animator;
+    int animState;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         controller = GetComponent<CharacterController>();
         baseSpeed = speed;
         playerStatus = GetComponent<PlayerStatus>();
+        animator = GetComponentInChildren<Animator>();
+        cameraTransform = Camera.main.transform;
+        catMat = GetComponentInChildren<SkinnedMeshRenderer>().material;
     }
 
     // Update is called once per frame
@@ -33,26 +43,52 @@ public class FPSPlayerController : MonoBehaviour
     {
         if (!PlayerStatus.isAlive)
         {
+            if (animator != null)
+            {
+                animator.SetInteger("animState", 3);
+            }
             return;
         }
-        if (!isSpeedBoosted)
-        {
-            if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && playerStatus.currentEnergy > 0)
-            {
-                isRunning = true;
-                speed = baseSpeed * 2;
-            }
-            else
-            {
-                isRunning = false;
-                speed = baseSpeed;
-            }
-        }
+
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        input = transform.right * moveHorizontal + transform.forward * moveVertical;
+        input = new Vector3(moveHorizontal, 0, moveVertical);
         input.Normalize();
+
+        if(input.magnitude > 0)
+        {
+            float rotationAngle = Mathf.Atan2(input.x, input.z) * Mathf.Rad2Deg + cameraTransform.eulerAngles.y;
+            transform.rotation = Quaternion.Euler(0, rotationAngle, 0);
+
+            Vector3 moveDir = Quaternion.Euler(0, rotationAngle, 0) * Vector3.forward;
+            input = moveDir.normalized;
+
+            if (!isSpeedBoosted)
+            {
+                if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && playerStatus.currentEnergy > 0)
+                {
+                    isRunning = true;
+                    animState = 2;
+                    speed = baseSpeed * 2;
+                }
+                else
+                {
+                    isRunning = false;
+                    animState = 1;
+                    speed = baseSpeed;
+                }
+            }
+        }
+        else
+        {
+            animState = 0;
+        }
+
+        if (animator != null)
+        {
+            animator.SetInteger("animState", animState);
+        }
 
         if ((Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1)) && rollerSkatesIcon.enabled == true && !isSpeedBoosted)
         {
@@ -66,15 +102,7 @@ public class FPSPlayerController : MonoBehaviour
         if (controller.isGrounded)
         {
             moveDirection = input;
-            if (Input.GetButton("Jump"))
-            {
-                moveDirection.y = Mathf.Sqrt(2 * jumpHeight * gravity);
-
-            }
-            else
-            {
-                moveDirection.y = 0.0f;
-            }
+            moveDirection.y = 0.0f;
         }
         else
         {
@@ -97,39 +125,16 @@ public class FPSPlayerController : MonoBehaviour
 
     IEnumerator ActivateInvisibility()
     {
-        SkinnedMeshRenderer renderer = GetComponentInChildren<SkinnedMeshRenderer>(true);
+        isInvisible = true;
+        potionIcon.enabled = false;
+        SkinnedMeshRenderer renderer = GetComponentInChildren<SkinnedMeshRenderer>();
         
         if (renderer != null)
         {
-            Material playerMaterial = renderer.material;
-
-            playerMaterial.SetFloat("_Surface", 1);
-            playerMaterial.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Transparent;
-            playerMaterial.EnableKeyword("_SURFACE_TYPE_TRANSPARENT");
-
-            Color color = playerMaterial.color;
-            color.a = 0f;
-            playerMaterial.color = color;
-
-            isInvisible = true;
-            potionIcon.enabled = false;
-            Debug.Log("Player Surface Type: Transparent");
-
+            renderer.material = invisibleMat;
             yield return new WaitForSeconds(5);
-
-            playerMaterial.SetFloat("_Surface", 0);
-            playerMaterial.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Geometry;
-            playerMaterial.DisableKeyword("_SURFACE_TYPE_TRANSPARENT");
-
-            color.a = 1f;
-            playerMaterial.color = color;
+            renderer.material = catMat;
             isInvisible = false;
-
-            Debug.Log("Player Surface Type: Opaque");
-        }
-        else
-        {
-            Debug.LogWarning("SkinnedMeshRenderer not found on player!");
         }
     }
 }

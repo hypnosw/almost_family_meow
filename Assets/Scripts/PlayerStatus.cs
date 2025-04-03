@@ -6,10 +6,10 @@ public class PlayerStatus : MonoBehaviour
     public Slider hungerSlider;
     public Slider energySlider;
     public int startingHunger = 100;
-    public float hungerDecreaseRate = 0.5f;
+    public float hungerDecreaseRate = 1f;
     public int startingEnergy = 30;
-    public float energyDecreaseRate = 1;
-    public float energyIncreaseRate = 0.5f;
+    public float energyDecreaseRate = 5;
+    public float energyIncreaseRate = 1f;
     public static bool isAlive{get; set;}
     private float currentHunger;
 

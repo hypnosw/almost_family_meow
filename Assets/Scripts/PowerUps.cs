@@ -6,10 +6,13 @@ public class PowerUps : MonoBehaviour
     public float speed = 80f;
     public Image icon;
     public AudioClip powerUpSound;
+    public string tutorialMessage;
+    LevelManager levelManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         icon.enabled = false;
+        levelManager = FindAnyObjectByType<LevelManager>();
     }
 
     // Update is called once per frame
@@ -22,6 +25,7 @@ public class PowerUps : MonoBehaviour
         if(other.CompareTag("Player")){
             Debug.Log("Power Up Collected");
             icon.enabled = true;
+            levelManager.DisplayTutorialMessage(tutorialMessage);
             if(powerUpSound != null)
             {
                 AudioSource.PlayClipAtPoint(powerUpSound, transform.position);

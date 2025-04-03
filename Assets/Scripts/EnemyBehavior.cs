@@ -10,11 +10,15 @@ public class EnemyBehavior : MonoBehaviour
     PlayerStatus playerStatus;
     private AudioSource audioSource;
     Animator animator;
+    LevelManager levelManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        playerStatus = player.GetComponent<PlayerStatus>();
+        if (player != null)
+        {
+            playerStatus = player.GetComponent<PlayerStatus>();
+        }
         audioSource = GetComponent<AudioSource>();
         animator = GetComponentInChildren<Animator>();
         if (audioSource != null)
@@ -22,14 +26,24 @@ public class EnemyBehavior : MonoBehaviour
             audioSource.Play();
         }
         Destroy(gameObject, lifeTime);
+        levelManager = FindAnyObjectByType<LevelManager>();
+        levelManager.DisplayTutorialMessage("A dog is chasing you!\nPress SHIFT to run!");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (player == null)
+        if (player != null)
         {
-            return;
+            float step = speed * Time.deltaTime;
+            if (FPSPlayerController.isInvisible == false && HideoutBehavior.isHidden == false)
+            {
+                transform.LookAt(player);
+                transform.position = Vector3.MoveTowards(transform.position, player.position, step);
+                animator.SetBool("stopChasing", false);
+            } else {
+                animator.SetBool("stopChasing", true);
+            }
         }
 
         // float distance = Vector3.Distance(transform.position, player.position);
@@ -39,15 +53,6 @@ public class EnemyBehavior : MonoBehaviour
         //     Destroy(gameObject);
         //     return;
         // }
-        float step = speed * Time.deltaTime;
-        if (FPSPlayerController.isInvisible == false)
-        {
-            transform.LookAt(player);
-            transform.position = Vector3.MoveTowards(transform.position, player.position, step);
-            animator.SetBool("stopChasing", false);
-        } else {
-            animator.SetBool("stopChasing", true);
-        }
     }
 
     void OnTriggerEnter(Collider other){
