@@ -27,12 +27,17 @@ public class EnemyBehavior : MonoBehaviour
         }
         Destroy(gameObject, lifeTime);
         levelManager = FindAnyObjectByType<LevelManager>();
-        levelManager.DisplayTutorialMessage("A dog is chasing you!\nPress SHIFT to run!");
+        levelManager.DisplayTutorialMessage("A dog is chasing you!\nPress SHIFT to run \nOr find a crate to hide in!");
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(LevelManager.isPlaying == false)
+        {
+            Destroy(gameObject);
+            return;
+        }
         if (player != null)
         {
             float step = speed * Time.deltaTime;
@@ -41,9 +46,15 @@ public class EnemyBehavior : MonoBehaviour
                 transform.LookAt(player);
                 transform.position = Vector3.MoveTowards(transform.position, player.position, step);
                 animator.SetBool("stopChasing", false);
-            } else {
+            }
+            else {
                 animator.SetBool("stopChasing", true);
             }
+        } else
+        {
+            Debug.LogWarning("Player not found. Destroying enemy.");
+            Destroy(gameObject);
+            return;
         }
 
         // float distance = Vector3.Distance(transform.position, player.position);

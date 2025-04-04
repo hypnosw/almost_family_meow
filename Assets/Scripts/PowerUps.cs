@@ -28,7 +28,7 @@ public class PowerUps : MonoBehaviour
             levelManager.DisplayTutorialMessage(tutorialMessage);
             if(powerUpSound != null)
             {
-                AudioSource.PlayClipAtPoint(powerUpSound, transform.position);
+                AudioSource.PlayClipAtPoint(powerUpSound, transform.position, 1);
             }
             Destroy(gameObject, 0.1f);
         }

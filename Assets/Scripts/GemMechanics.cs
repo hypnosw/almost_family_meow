@@ -27,7 +27,7 @@ public class GemMechanics : MonoBehaviour
             gemCollected = true;
             if(gemSound != null)
             {
-                AudioSource.PlayClipAtPoint(gemSound, transform.position);
+                AudioSource.PlayClipAtPoint(gemSound, transform.position, 1);
             }
             Destroy(gameObject, 0.1f);
         }

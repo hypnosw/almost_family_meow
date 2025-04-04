@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
 using System;
-using UnityEngine.Video;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
@@ -9,16 +8,20 @@ public class LevelManager : MonoBehaviour
     public TMP_Text levelText;
     public TMP_Text tutorialText;
     public GameObject nextButton;
+    public static bool isPlaying { get; private set; }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        DisplayTutorialMessage("Move mouse to look around.\nUse WASD to move.");
+        DisplayTutorialMessage("Move mouse to look around.\nUse W, A, S, D to move.");
+        isPlaying = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void LevelWon()
@@ -26,12 +29,16 @@ public class LevelManager : MonoBehaviour
         PlayerStatus.isAlive = false;
         DisplayLevelMessage("LEVEL COMPLETE!");
         nextButton.SetActive(true);
+        isPlaying = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void LevelLost()
     {
         PlayerStatus.isAlive = false;
         DisplayLevelMessage("YOU LOST!");
+        isPlaying = false;
         Invoke("ReloadSameScene", 2f);
     }
 
@@ -58,5 +65,10 @@ public class LevelManager : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
