@@ -7,21 +7,22 @@ public class HideoutBehavior : MonoBehaviour
     public TMP_Text hideoutText;
 
     private bool isNear = false;
+    private bool wasNear = false;
     public static bool isHidden { get; private set; }
     GameObject player;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        // hideoutText.enabled = false;
+        hideoutText.enabled = false;
     }
 
     void Update()
     {
-
+        wasNear = isNear;
+        isNear = false;
 
         Collider[] hits = Physics.OverlapSphere(transform.position, detectionRange);
-        isNear = false;
 
         foreach (Collider hit in hits)
         {
@@ -32,45 +33,45 @@ public class HideoutBehavior : MonoBehaviour
             }
         }
 
-        Debug.Log($"isNear: {isNear}, isHidden: {isHidden}");
-
-        if (!isHidden && isNear)
+        // If player is hidden, always show "Press E to leave"
+        if (isHidden)
         {
+            hideoutText.text = "Press E to leave";
             hideoutText.enabled = true;
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                UnhidePlayer();
+            }
+        }
+        // If player is near and not hidden, show "Press F to hide"
+        else if (isNear)
+        {
             hideoutText.text = "Press F to hide";
+            hideoutText.enabled = true;
 
             if (Input.GetKeyDown(KeyCode.F))
             {
                 HidePlayer();
             }
         }
-        else if (!isHidden)
+        // If player is not near and not hidden, hide the text
+        else if (wasNear && !isNear)
         {
             hideoutText.enabled = false;
-        }
-
-        if (isHidden && Input.GetKeyDown(KeyCode.E))
-        {
-            UnhidePlayer();
         }
     }
 
     void HidePlayer()
     {
-        // player.transform.position = transform.position;
-
         player.SetActive(false);
         isHidden = true;
-
-        hideoutText.enabled = true;
-        hideoutText.text = "Press E to leave";
     }
 
     void UnhidePlayer()
     {
         player.SetActive(true);
         isHidden = false;
-        hideoutText.enabled = false;
     }
 
     void OnDrawGizmosSelected()
