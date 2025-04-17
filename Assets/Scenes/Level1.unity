@@ -10958,7 +10958,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &487252854
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12461,8 +12461,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4.799988, y: -60.9}
-  m_SizeDelta: {x: 80, y: 25}
+  m_AnchoredPosition: {x: -15.099976, y: -60.899994}
+  m_SizeDelta: {x: 20, y: 25}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &656553959
 MonoBehaviour:
@@ -12484,7 +12484,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1       2
+  m_text: 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17167,7 +17167,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1039998701938557353, guid: 75233435074705d4dbe31f02d7433c3a, type: 3}
       propertyPath: m_Name
-      value: Button (2)
+      value: ButtonSave
       objectReference: {fileID: 0}
     - target: {fileID: 1276317745160421504, guid: 75233435074705d4dbe31f02d7433c3a, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
@@ -17235,7 +17235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3486171398878345668, guid: 75233435074705d4dbe31f02d7433c3a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 150
+      value: 370
       objectReference: {fileID: 0}
     - target: {fileID: 3486171398878345668, guid: 75233435074705d4dbe31f02d7433c3a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -17291,7 +17291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6375869098931013371, guid: 75233435074705d4dbe31f02d7433c3a, type: 3}
       propertyPath: m_text
-      value: EXIT GAME
+      value: SAVE AND EXIT TO MAIN MENU
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19824,7 +19824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1039998701938557353, guid: 75233435074705d4dbe31f02d7433c3a, type: 3}
       propertyPath: m_Name
-      value: Button (1)
+      value: ButtonRestart
       objectReference: {fileID: 0}
     - target: {fileID: 1276317745160421504, guid: 75233435074705d4dbe31f02d7433c3a, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
@@ -21065,7 +21065,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1500036004
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28704,7 +28704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1039998701938557353, guid: 75233435074705d4dbe31f02d7433c3a, type: 3}
       propertyPath: m_Name
-      value: Button
+      value: ButtonResume
       objectReference: {fileID: 0}
     - target: {fileID: 1276317745160421504, guid: 75233435074705d4dbe31f02d7433c3a, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
@@ -28964,6 +28964,10 @@ PrefabInstance:
     - target: {fileID: 9078885982429859198, guid: 9b45b0eb1ab493a4b87b7eca868b94c5, type: 3}
       propertyPath: m_Name
       value: RollerSkates
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078885982429859198, guid: 9b45b0eb1ab493a4b87b7eca868b94c5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
