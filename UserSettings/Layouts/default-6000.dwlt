@@ -410,7 +410,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: ccf7feff2efcfefff2fffefff207ffff1c15ffff2821ffff4049ffffb25effff0c67ffff186fffff5e75ffffae77ffff567cffff1481ffff4287ffff4495ffff7ea5ffff12b8fffff4b8ffffb4ceffffe6e6ffff20fbffff3ace00004cce000020cf000024cf000052d1000008d20000aed20000581503006a15030082160300701a0300581b0300
+      m_ExpandedIDs: 6089ffff6aa3ffff7ca4ffff26a6ffff3ca7ffff2aa9ffff14acffffeeb0ffff3ab5ffff7ab8ffffc8f4ffffa8f7ffff14fbffffb4ce0000c6ce0000eccf0000f0cf0000fccf0000aed0000036d100002cd400002cd50000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -531,7 +531,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -541,16 +541,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: E:\Projects\Unity Projects\Almost_Family_Meow
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b0d90000
-    m_LastClickedID: 55728
-    m_ExpandedIDs: 00000000c4db0000c6db0000c8db0000cadb0000ccdb0000cedb0000d0db0000d2db0000d4db0000d6db0000d8db0000dadb0000dcdb0000dedb0000e0db0000e2db0000
+    m_SelectedIDs: dadb0000
+    m_LastClickedID: 56282
+    m_ExpandedIDs: 0000000048de00004ade00004cde00004ede000050de000052de000054de000056de000058de00005ade00005cde00005ede000060de000062de000064de000066de0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -579,7 +579,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: f4d10000
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c4db0000c6db0000c8db0000cadb0000ccdb0000cedb0000d0db0000d2db0000d4db0000d6db0000d8db0000dadb0000dcdb0000dedb0000e0db0000e2db0000
+    m_ExpandedIDs: 0000000048de00004ade00004cde00004ede000050de000052de000054de000056de000058de00005ade00005cde00005ede000060de000062de000064de000066de0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -607,7 +607,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1303,9 +1303,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 5.7345114, y: 0.2942097, z: 9.701094}
+    m_Target: {x: 4.3726945, y: 0.31129873, z: 8.077308}
     speed: 2
-    m_Value: {x: 5.7345114, y: 0.2942097, z: 9.701094}
+    m_Value: {x: 4.3726945, y: 0.31129873, z: 8.077308}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1351,13 +1351,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+    m_Target: {x: 0.706422, y: 0.001404541, z: -0.0014215362, w: 0.7078365}
     speed: 2
-    m_Value: {x: -0.7071068, y: 0, z: -0, w: -0.7071068}
+    m_Value: {x: -0.706422, y: -0.001404541, z: 0.0014215361, w: -0.7078365}
   m_Size:
-    m_Target: 13.186013
+    m_Target: 15.802191
     speed: 2
-    m_Value: 13.186013
+    m_Value: 15.802191
   m_Ortho:
     m_Target: 1
     speed: 2
