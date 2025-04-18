@@ -5000,6 +5000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 80
   icon: {fileID: 0}
+  powerupID: 2
   powerUpSound: {fileID: 8300000, guid: 76231034c16a346359288718672bbc0a, type: 3}
   tutorialMessage: Press 2 to become invisible for 5 seconds
 --- !u!136 &8869309676907405528

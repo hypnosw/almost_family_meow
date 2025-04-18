@@ -21,9 +21,17 @@ public class PlayerStatus : MonoBehaviour
     void Start()
     {
         isAlive = true;
-        currentHunger = startingHunger;
+        if (PlayerPrefs.HasKey("SavedHunger") && PlayerPrefs.HasKey("SavedEnergy"))
+        {
+            LoadStatus(); // restore saved state
+        }
+        else
+        {
+            currentHunger = startingHunger;
+            currentEnergy = startingEnergy;
+        }
+
         UpdateHungerSlider();
-        currentEnergy = startingEnergy;
         UpdateEnergySlider();
         playerController = GetComponent<FPSPlayerController>();
         levelManager = FindAnyObjectByType<LevelManager>();
@@ -106,4 +114,39 @@ public class PlayerStatus : MonoBehaviour
             energySlider.value = currentEnergy;
         }
     }
+
+    public void SaveStatus()
+    {
+        PlayerPrefs.SetFloat("SavedHunger", currentHunger);
+        PlayerPrefs.SetFloat("SavedEnergy", currentEnergy);
+        PlayerPrefs.Save();
+        Debug.Log("Player status saved!");
+    }
+
+    public void LoadStatus()
+    {
+        if (PlayerPrefs.HasKey("SavedHunger"))
+        {
+            currentHunger = PlayerPrefs.GetFloat("SavedHunger");
+            UpdateHungerSlider();
+        }
+
+        if (PlayerPrefs.HasKey("SavedEnergy"))
+        {
+            currentEnergy = PlayerPrefs.GetFloat("SavedEnergy");
+            UpdateEnergySlider();
+        }
+
+        if (PlayerPrefs.HasKey("PlayerX") && PlayerPrefs.HasKey("PlayerY") && PlayerPrefs.HasKey("PlayerZ"))
+        {
+            Vector3 savedPos = new Vector3(
+                PlayerPrefs.GetFloat("PlayerX"),
+                PlayerPrefs.GetFloat("PlayerY"),
+                PlayerPrefs.GetFloat("PlayerZ")
+            );
+
+            transform.position = savedPos;
+        }
+    }
+
 }

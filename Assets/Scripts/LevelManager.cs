@@ -30,6 +30,8 @@ public class LevelManager : MonoBehaviour
         DisplayLevelMessage("LEVEL COMPLETE!");
         nextButton.SetActive(true);
         isPlaying = false;
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
@@ -39,6 +41,8 @@ public class LevelManager : MonoBehaviour
         PlayerStatus.isAlive = false;
         DisplayLevelMessage("YOU LOST!");
         isPlaying = false;
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
         Invoke("ReloadSameScene", 2f);
     }
 

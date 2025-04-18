@@ -4,11 +4,12 @@ using UnityEngine.SceneManagement;
 public class PauseMenuBehavior : MonoBehaviour
 {
     public GameObject pauseMenuPanel;
+    public PlayerStatus playerStatus;
     bool isGamePaused = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        playerStatus = FindAnyObjectByType<PlayerStatus>();
     }
 
     // Update is called once per frame
@@ -49,6 +50,8 @@ public class PauseMenuBehavior : MonoBehaviour
 
     public void ReloadSameScene()
     {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
         ResumeGame();
@@ -56,7 +59,24 @@ public class PauseMenuBehavior : MonoBehaviour
 
     public void ExitGame()
     {
-        Debug.Log("Game is exiting...");
-        Application.Quit();
+        int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            Vector3 pos = player.transform.position;
+            PlayerPrefs.SetFloat("PlayerX", pos.x);
+            PlayerPrefs.SetFloat("PlayerY", pos.y);
+            PlayerPrefs.SetFloat("PlayerZ", pos.z);
+        }
+
+        playerStatus.SaveStatus();
+        PlayerPrefs.SetInt("HasSavedGame", 1);
+        PlayerPrefs.SetInt("CurrentLevel", currentLevelIndex);
+        PlayerPrefs.Save();
+
+        // Unpause game before changing scenes
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
     }
 }
