@@ -121,5 +121,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6bd56fc84ab6b5428d82dce02c1e4c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRange: 2
+  detectionRange: 1.5
   hideoutText: {fileID: 0}
