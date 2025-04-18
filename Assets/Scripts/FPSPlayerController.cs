@@ -118,6 +118,8 @@ public class FPSPlayerController : MonoBehaviour
         isSpeedBoosted = true;
         speed = baseSpeed * 3;
         rollerSkatesIcon.enabled = false;
+        PlayerPrefs.SetInt("Powerup_collected_1", 0);
+        PlayerPrefs.Save();
         yield return new WaitForSeconds(5);
         speed = baseSpeed;
         isSpeedBoosted = false;
@@ -127,6 +129,8 @@ public class FPSPlayerController : MonoBehaviour
     {
         isInvisible = true;
         potionIcon.enabled = false;
+        PlayerPrefs.SetInt("Powerup_collected_2", 0);
+        PlayerPrefs.Save();
         SkinnedMeshRenderer renderer = GetComponentInChildren<SkinnedMeshRenderer>();
         
         if (renderer != null)

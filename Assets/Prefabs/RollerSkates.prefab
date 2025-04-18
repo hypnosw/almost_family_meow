@@ -4967,6 +4967,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 80
   icon: {fileID: 0}
+  powerupID: 1
   powerUpSound: {fileID: 8300000, guid: 02f98902d77f7431cb0c64b9fe4744fc, type: 3}
   tutorialMessage: Press 1 to boost your speed
 --- !u!65 &8781546825004529915

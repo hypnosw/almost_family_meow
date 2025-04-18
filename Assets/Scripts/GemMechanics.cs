@@ -10,8 +10,19 @@ public class GemMechanics : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        gemChecked.enabled = false;
         gemCollected = false;
+
+        // Check if gem was already collected
+        if (PlayerPrefs.GetInt("GemCollected", 0) == 1)
+        {
+            gemChecked.enabled = true;
+            gameObject.SetActive(false); // prevent gem from spawning again
+            gemCollected = true;
+        }
+        else
+        {
+            gemChecked.enabled = false;
+        }
     }
 
     // Update is called once per frame
@@ -24,6 +35,8 @@ public class GemMechanics : MonoBehaviour
         if(other.CompareTag("Player")){
             Debug.Log("Gem Collected");
             gemChecked.enabled = true;
+            PlayerPrefs.SetInt("GemCollected", 1);
+            PlayerPrefs.Save();
             gemCollected = true;
             if(gemSound != null)
             {

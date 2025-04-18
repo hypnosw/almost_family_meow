@@ -70,6 +70,7 @@
     <Compile Include="Assets\LowPoly3DAnimatedNutBrothers_RollerSkatesPackage\DemoScenes\Script\Demo.cs" />
     <Compile Include="Assets\Scripts\MouseLook.cs" />
     <Compile Include="Assets\living birds\demo\livingBirdsDemoScript.cs" />
+    <Compile Include="Assets\Scripts\MainMenuBehavior.cs" />
     <Compile Include="Assets\PBR_Grass_Textures\Scripts\CameraFreeflight.cs" />
     <Compile Include="Assets\living birds\scripts\lb_Bird.cs" />
     <Compile Include="Assets\Scripts\PauseMenuBehavior.cs" />
