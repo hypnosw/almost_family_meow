@@ -36,6 +36,7 @@ public class FPSPlayerController : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         cameraTransform = Camera.main.transform;
         catMat = GetComponentInChildren<SkinnedMeshRenderer>().material;
+        isInvisible = false;
     }
 
     // Update is called once per frame
@@ -138,7 +139,8 @@ public class FPSPlayerController : MonoBehaviour
             renderer.material = invisibleMat;
             yield return new WaitForSeconds(5);
             renderer.material = catMat;
-            isInvisible = false;
         }
+
+        isInvisible = false;
     }
 }
